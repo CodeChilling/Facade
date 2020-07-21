@@ -35,10 +35,33 @@ public class Welcome extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Welcome</title>");
+            out.println("    <meta charset=\"utf-8\">\n" +
+                        "    <title>Adrianca</title>\n" +
+                    "<link rel=\"icon\" type=\"image/png\" href=\"https://image.flaticon.com/icons/svg/2979/2979504.svg\" />"+
+                        "    <link rel=\"stylesheet\" href=\"css/style_form.css\">");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Welcome at " + request.getContextPath()
+            out.println("   <form action=\"Redirect\" method=\"GET\">\n" +
+                                "<div class=\"login-box\">\n" +
+                                "  <h1>"+request.getContextPath()+"</h1>\n" +
+                                "  <div class=\"textbox\">\n" +
+                                "    <i class=\"fas fa-plane\"></i>\n" +
+                                  "<label for=\"date_select\"><strong>Que vuelo deseas</strong></label>"+
+                                "    <select name=\"type_select\" id=\"type_select\" class=\"select-type\">\n" +
+                                "        <option value=\"1\" class=\"value-type\">Internacional</option>\n" +
+                                "        <option value=\"2\" class=\"value-type\">Nacional</option>\n" +
+                                "    </select>\n" +
+                                "  </div>\n" +
+                                "\n" +
+                                "  <div class=\"textbox\">\n" +
+                                "    <i class=\"fas fa-plane-departure\"></i>\n" +
+                                "    <input type=\"text\" placeholder=\"Ciudad de Partida\" name=\"initial-city\" id=\"initial-city\" required>\n" +
+                                "  </div>\n" +
+                                "\n" +
+                                "  <input type=\"submit\" class=\"btn\" value=\"Continuar\">\n" +
+                                "</div>\n" +
+                            "</form>");
+            /*out.println("<h1>Servlet Welcome at " + request.getContextPath()
                     + "<form action=\"Redirect\" method=\"GET\" class=\"form\">\n"
                     + "\n"
                     + "          \n"
@@ -49,7 +72,7 @@ public class Welcome extends HttpServlet {
                     + "                        </select>\n"
                     + "<input type=\"text\" class=\"form-control\" placeholder=\"Escriba la ciudad de partida\" name=\"initial-city\" id=\"initial-city\" required>"
                     + "<input type=\"submit\" value=\"Continuar\" class=\"button-submit\">"
-                    + "            </form>");
+                    + "            </form>");*/
 
             out.println("</body>");
             out.println("</html>");

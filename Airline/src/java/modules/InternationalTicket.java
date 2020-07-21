@@ -20,18 +20,18 @@ public class InternationalTicket implements Ticket {
 
     public InternationalTicket() {
 
-        InternationalTicket.cities.put("Manchester", "https://dondehospedarse.com/img/donde-alojarse-manchester.jpg");
-        InternationalTicket.cities.put("Londres", null);
-        InternationalTicket.cities.put("Estambul", null);
-        InternationalTicket.cities.put("Tokyo", null);
-        InternationalTicket.cities.put("Okinawa", null);
-        InternationalTicket.cities.put("Bangkok", "https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg");
-        InternationalTicket.cities.put("Rio de Janeiro", null);
-        InternationalTicket.cities.put("Roma", null);
-        InternationalTicket.cities.put("Paris", null);
-        InternationalTicket.cities.put("Praga", null);
-        InternationalTicket.cities.put("Budapest", null);
-        InternationalTicket.cities.put("Berlin", null);
+        InternationalTicket.cities.put("Manchester", "");
+        InternationalTicket.cities.put("Londres", "");
+        InternationalTicket.cities.put("Estambul", "");
+        InternationalTicket.cities.put("Tokyo", "");
+        InternationalTicket.cities.put("Okinawa", "");
+        InternationalTicket.cities.put("Bangkok", "");
+        InternationalTicket.cities.put("Rio de Janeiro", "");
+        InternationalTicket.cities.put("Roma", "");
+        InternationalTicket.cities.put("Paris", "");
+        InternationalTicket.cities.put("Praga", "");
+        InternationalTicket.cities.put("Budapest", "");
+        InternationalTicket.cities.put("Berlin", "");
     }
 
     public HashMap<String, String> getCities() {

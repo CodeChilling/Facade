@@ -1,0 +1,54 @@
+body{
+    background: url("https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=787&q=80") no-repeat  center  center  fixed;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.columna{
+    background-color: rgb(226, 229, 229);
+    color: rgb(20, 19, 19);
+    border: 2px solid rgb(14, 13, 13);
+    margin: auto;
+    padding: 20px;
+}
+
+.container{
+    width: 1000px;
+    display: flex;
+    text-align: center;
+    background: rgba(39, 38, 38, 0.548);
+    padding: 20px;
+    margin: 10% auto;
+}
+
+.font{
+    font-family: 'Arimo', sans-serif;
+}
+
+.btn-ticket{
+    text-decoration: none;
+    background: #eb7b67;
+    padding: 10px 30px;
+    display: block;
+    color: #ffffff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+hr{
+    margin: 10px;
+    height: 1px;
+    background-color: black;
+}
+
+.precio{
+    color: rgb(101, 214, 209);
+    font-size: 45px;
+
+}
+
+.border{
+    box-shadow: 10px 10px 5px #a7a4a4;
+}

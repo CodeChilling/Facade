@@ -19,15 +19,15 @@ public class NationalTicket implements Ticket {
     private ArrayList<String> info = new ArrayList<>();
 
     public NationalTicket() {
-        NationalTicket.cities.put("Bogotá", null);
-        NationalTicket.cities.put("Medellín", null);
-        NationalTicket.cities.put("Cali", null);
-        NationalTicket.cities.put("Manizales", null);
-        NationalTicket.cities.put("Pereira", null);
-        NationalTicket.cities.put("Neiva", null);
-        NationalTicket.cities.put("Cartagena", null);
-        NationalTicket.cities.put("Bucaramanga", null);
-        NationalTicket.cities.put("Santa Marta", null);
+        NationalTicket.cities.put("Bogota", "");
+        NationalTicket.cities.put("Medellin", "");
+        NationalTicket.cities.put("Cali", "");
+        NationalTicket.cities.put("Manizales", "");
+        NationalTicket.cities.put("Pereira", "");
+        NationalTicket.cities.put("Neiva", "");
+        NationalTicket.cities.put("Cartagena", "");
+        NationalTicket.cities.put("Bucaramanga", "");
+        NationalTicket.cities.put("Santa Marta", "");
     }
 
     public HashMap<String, String> getCities() {

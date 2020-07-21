@@ -40,10 +40,40 @@ public class CheckInfo extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Welcome</title>");
+                out.println("<meta charset=\"utf-8\">\n" +
+                        "    <title>Adrianca</title>\n" +
+                        "<link rel=\"icon\" type=\"image/png\" href=\"https://image.flaticon.com/icons/svg/2979/2979504.svg\" />"+
+                        "    <link rel=\"stylesheet\" href=\"css/style_form.css\">");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Welcome at " + request.getContextPath()
+            out.println("<form action=\"CheckIn\" method=\"GET\">\n" +
+                        "<div class=\"login-box\">\n" +
+                        "  <h1>AirLine</h1>\n" +
+                        "  <div class=\"textbox\">\n" +
+                        "    <i class=\"fas fa-user-edit\"></i>\n" +
+                        "    <input type=\"text\" placeholder=\"Nombre Completo\" name=\"full-name\" id=\"full-name\" required>\n" +
+                        "  </div>\n" +
+                        "  <div class=\"textbox\">\n" +
+                        "    <i class=\"far fa-id-card\"></i>\n" +
+                        "    <input type=\"number\" placeholder=\"Escriba su ID\" name=\"full-id\" id=\"full-id\" required>\n" +
+                        "  </div>\n" +
+                        "  <div class=\"textbox\">\n" +
+                        "    <i class=\"fas fa-phone\"></i>\n" +
+                        "    <input type=\"number\" placeholder=\"Numero de Contacto\" name=\"full-phone\" id=\"full-phone\" required>\n" +
+                        "  </div>\n" +
+                        "  <div class=\"textbox\">\n" +
+                        "    <i class=\"fas fa-hotel\"></i>\n" +
+                        "    <input type=\"text\" placeholder=\"Nombre de Hotel\" name=\"full-hotel\" id=\"full-hotel\" required>\n" +
+                        "  </div>\n" +
+                        "  <div class=\"textbox\">\n" +
+                        "    <i class=\"fas fa-sun\"></i>\n" +
+                        "    <input type=\"number\" placeholder=\"Dias de Estadia\" name=\"full-estance\" id=\"full-estance\" required>\n" +
+                        "  </div>\n" +
+                        "\n" +
+                        "  <input type=\"submit\" class=\"btn\" value=\"Continuar\">\n" +
+                        "</div>\n" +
+                        "</form>");
+            /*out.println("<h1>Servlet Welcome at " + request.getContextPath()
                     + "<form action=\"CheckIn\" method=\"GET\" class=\"form\">\n"
                     + "\n"
                     + "          \n"
@@ -54,7 +84,7 @@ public class CheckInfo extends HttpServlet {
                     + "                <input type=\"text\" class=\"form-control\" placeholder=\"Escriba el nombre del hotel donde se va a hospedar\" name=\"full-hotel\" id=\"full-hotel\" required>"
                     + "                <input type=\"number\" class=\"form-control\" placeholder=\"Escriba la duracion de su estancia\" name=\"full-estance\" id=\"full-estance\" required>"
                     + "<input type=\"submit\" value=\"Continuar\" class=\"button-submit\">"
-                    + "            </form>");
+                    + "            </form>");*/
 
             out.println("</body>");
             out.println("</html>");

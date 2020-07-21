@@ -56,10 +56,30 @@ public class CitySelect extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Welcome</title>");
+                out.println("<meta charset=\"utf-8\">\n" +
+                        "    <title>Adrianca</title>\n"+
+                        "<link rel=\"icon\" type=\"image/png\" href=\"https://image.flaticon.com/icons/svg/2979/2979504.svg\" />"+
+                        "    <link rel=\"stylesheet\" href=\"css/style_form.css\">");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Welcome at " + request.getContextPath()
+           out.println("<form action=\"Info\" method=\"GET\">\n" +
+                        "<div class=\"login-box\">\n" +
+                        "  <h1>"+request.getContextPath()+"</h1>\n" +
+                        "  <div class=\"textbox\">\n" +
+                        "    <i class=\"fas fa-plane-arrival\"></i>\n" +
+                                 "<label for=\"date_select\"><strong>Ciudad de Llegada</strong></label>"+
+                        "    <select name=\"city_select\" id=\"city_select\" class=\"select-type\">\n");
+                        for(String item: Facade.getAllCities()){
+                            if(!item.equals(Redirect.getProcedence())){
+                                 out.println("<option class=\"value-type\" value=\""+item+"\">"+item+"</option>\n");
+                            }
+                        }
+            out.println("</select>\n" +
+                        "  </div>\n" +
+                        "  <input type=\"submit\" class=\"btn\" value=\"Continuar\">\n" +
+                        "</div>\n" +
+                        "</form>");       
+           /*out.println("<h1>Servlet Welcome at " + request.getContextPath()
                         + "<form action=\"Info\" method=\"GET\" class=\"form\">\n"
                         + "\n"
                         + "          \n"
@@ -74,7 +94,7 @@ public class CitySelect extends HttpServlet {
                         out.println( "                        </select>\n"
                         + "<input type=\"submit\" value=\"Continuar\" class=\"button-submit\">"
                         + "            </form>");
-                System.out.println("Hey");
+                System.out.println("Hey");*/
                 
             System.out.println(Redirect.getType());
             System.out.println(Redirect.getProcedence());

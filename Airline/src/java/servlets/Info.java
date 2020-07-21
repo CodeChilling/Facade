@@ -39,10 +39,58 @@ public class Info extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Welcome</title>");
+            out.println("<meta charset=\"utf-8\">\n" +
+                    "    <title>Adrianca</title>\n" +
+                    "<link rel=\"icon\" type=\"image/png\" href=\"https://image.flaticon.com/icons/svg/2979/2979504.svg\" />"+
+                    "    <link rel=\"stylesheet\" href=\"css/style_form.css\">");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Welcome at " + request.getContextPath() + "</h1>" + "\n"
+           out.println("<form action=\"CheckInfo\" method=\"GET\">\n" +
+                        "    <div class=\"login-box\">\n" +
+                        "    <h1>"+request.getContextPath()+"</h1>\n" +
+                        "    <div class=\"textbox\">\n" +
+                        "        <i class=\"far fa-calendar-check\"></i>\n" +
+                                "<label for=\"date_select\"><strong>Fecha de Salida</strong></label>"+
+                        "        <select name=\"date_select\" id=\"date_select\" class=\"select-type\">\n");
+            for (int i = 0; i < CitySelect.getTool().getRandomDate().size(); i++) {
+                out.println(" "
+                        + "                            <option class=\"value-type\" value=\"" + CitySelect.getTool().getRandomDate().get(i) + "\">" + CitySelect.getTool().getRandomDate().get(i) + "</option>\n"
+                        + " ");
+            }
+            
+            out.println("</select>\n" +
+                        "    </div>\n" +
+                        "\n" +
+                        "        <div class=\"textbox\">\n" +
+                        "            <i class=\"far fa-calendar-alt\"></i>\n" +
+                     "<label for=\"date_select\"><strong>Hora de Salida</strong></label>"+
+                        "        <select name=\"time_select\" id=\"time_select\" class=\"select-type\">\n");
+            for (int i = 0; i < CitySelect.getTool().getRandomTime().size(); i++) {
+                out.println(" "
+                        + "                            <option class=\"value-type\" value=\"" + CitySelect.getTool().getRandomTime().get(i) + "\">" + CitySelect.getTool().getRandomTime().get(i) + "</option>\n"
+                        + " ");
+            }
+            out.println("</select>\n" +
+                        "    </div>\n" +
+                        "\n" +
+                        "    <div class=\"textbox\">\n" +
+                        "        <i class=\"fas fa-chair\"></i>\n" +
+                     "<label for=\"date_select\"><strong>Tipo de Asiento</strong></label>"+
+                        "        <select name=\"city_select\" id=\"city_select\" class=\"select-type\">\n");
+            for (int i = 0; i < CitySelect.getTool().getRandomSeat().size(); i++) {
+                out.println(" "
+                        + "                            <option class=\"value-type\" value=\"" + CitySelect.getTool().getRandomSeat().get(i) + "\">" + CitySelect.getTool().getRandomSeat().get(i) + "</option>\n"
+                        + " ");
+            }
+            out.println( "        </select>\n" +
+                        "    </div>\n" +
+                        "\n" +
+                        "    <input type=\"submit\" class=\"btn\" value=\"Continuar\">\n" +
+                        "    </div>\n" +
+                        "</form>");
+                        
+            
+            /*out.println("<h1>Servlet Welcome at " + request.getContextPath() + "</h1>" + "\n"
                     + "<form action=\"CheckInfo\" method=\"GET\" class=\"form\">\n"
                     + "\n"
                     + "          \n"
@@ -73,7 +121,7 @@ public class Info extends HttpServlet {
             out.println("                        </select>\n"
                     + "<input type=\"submit\" value=\"Continuar\" class=\"button-submit\">"
                     + "            </form>"
-                    + "\n");
+                    + "\n");*/
 
             out.println("</body>");
             out.println("</html>");

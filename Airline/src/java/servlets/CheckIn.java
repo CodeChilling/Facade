@@ -24,6 +24,8 @@ public class CheckIn extends HttpServlet {
     private static String phone;
     private static String residence;
     private static String residenceLenght;
+    private static String city;
+     private static String hola;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,21 +51,70 @@ public class CheckIn extends HttpServlet {
          */
         data = CitySelect.getTool().createTicket(CheckIn.getResidence(), CheckIn.getResidenceLenght(), CheckIn.getID(), CheckIn.getName(), CheckIn.getPhone(), Redirect.getProcedence(), Info.getCity(), CheckInfo.getDate(), CheckInfo.getTime(),CheckInfo.getSeat());
         
+        if(data.get(0).toString()==""){
+            city = data.get(1);
+        }
+        else{
+            city = data.get(0);
+        }
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CheckIn</title>");
+            out.println(" <meta charset=\"UTF-8\">\n" +
+                    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "    <title>Aprendiendo</title>\n" +
+                    "    <link rel=\"stylesheet\" href=\"css/style-ticket.css\">\n" +
+                    "<link rel=\"icon\" type=\"image/png\" href=\"https://image.flaticon.com/icons/svg/2979/2979504.svg\" />"+
+                    "    <link href=\"https://fonts.googleapis.com/css2?family=Arimo&display=swap\" rel=\"stylesheet\">\n" +
+                    "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity=\"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin=\"anonymous\">");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CheckIn at " + request.getContextPath() + "</h1>");
-            for(int i=0; i<data.size();i++){
-                out.println("<p>" + data.get(i) + "</p>");
-            }
+            out.println("<section class=\"container\">\n" +
+                    "         <div class=\"columna font border\">\n" +
+                    "            <h2>Plan "+request.getContextPath()+"</h2>\n" +
+                    "            <p><strong>Ciudad: </strong>"+city+"</p>\n" +
+                    "            <p><strong>Hotel: </strong>"+data.get(2)+"</p>\n" +
+                    "            <p><strong>Dias: </strong>"+data.get(3)+"</p>\n" +
+                    "            <hr>\n" +
+                    "            <p><strong>Identidad: </strong>"+data.get(4)+"</p>\n" +
+                    "            <p><strong>Nombre: </strong>"+data.get(5)+"</p>\n" +
+                    "            <p><strong>Telefono: </strong>"+data.get(6)+"</p>\n" +
+                    "            <p><strong>Partida: </strong>"+data.get(7)+"</p>\n" +
+                    "            <hr>\n" +
+                    "            <p><strong>Fecha: </strong>"+data.get(8)+"</p>\n" +
+                    "            <p><strong>Hora: </strong>"+data.get(9)+"</p>\n" +
+                    "            <hr>\n" +
+                    "            <button type=\"button\" class=\"btn-ticket\" data-toggle=\"modal\" data-target=\"#exampleModal\">\n" +
+                    "                Reservar Ya\n" +
+                    "              </button>\n" +
+                    "            <!--<a href=\"\" class=\"btn-ticket\">Reservar Ya</a>-->\n" +
+                    "         </div>\n" +
+                    "         \n" +
+                    "     </section>  \n" +
+                    "     <!-- Modal -->\n" +
+                    "     <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n" +
+                    "        <div class=\"modal-dialog\">\n" +
+                    "          <div class=\"modal-content\">\n" +
+                    "            <div class=\"modal-header\">\n" +
+                    "              <h5 class=\"modal-title\" id=\"exampleModalLabel\">¡Se ha Reservado Con Exito!</h5>\n" +
+                    "            </div>\n" +
+                    "            <div class=\"modal-footer\">\n" +
+                    "                <a href=\"index.jsp\" class=\"btn btn-primary\">Continuar</a>\n" +
+                    "            </div>\n" +
+                    "          </div>\n" +
+                    "        </div>\n" +
+                    "      </div> \n" +
+                    "\n" +
+                    "      <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>\n" +
+                    "      <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>\n" +
+                    "      <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\" integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI\" crossorigin=\"anonymous\"></script>");
             out.println("</body>");
             out.println("</html>");
         }
+        
     }
 
     public static void setID(String ID) {
